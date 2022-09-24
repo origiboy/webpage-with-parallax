@@ -9,3 +9,5 @@ dev version
 
 # gulp build
 build version
+
+see demo - https://origiboy.github.io/webpage-with-parallax/dist/
