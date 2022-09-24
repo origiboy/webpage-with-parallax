@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --index: calc(1vw + 1vh);
+}
+
+body {
+  background-color: #010101;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  position: relative;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 300px;
+  background-image: url(../images/ground.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: -100px;
+}
+
+.layers {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.layer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  z-index: 2;
+}
+
+.layers__base {
+  transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+  z-index: 0;
+}
+
+.layers__middle {
+  transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+
+.layers__front {
+  transform: translate3d(0, calc(var(--scrollTop) / 6), 0);
+}
+
+.layers__header {
+  z-index: 1;
+  padding-bottom: 50px;
+  transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+  will-change: transform;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #e7e7d3;
+  text-shadow: 0 0 15px#8D6D29;
+  p {
+    font-size: calc(var(--index) / 1.6);
+    letter-spacing: calc(var(--index) / 5);
+    font-weight: 400;
+  }
+}
+
+.layers__head {
+  font-size: calc(var(--index) * 1.5);
+  letter-spacing: calc(var(--index) / 3.5);
+  margin-bottom: 10px;
+
+}
+
+
+
+.hero {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.hero__content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(var(--index) / 1.5);
+  h2 {
+    margin-bottom: 20px;
+    color: #e7e7d3;
+    text-shadow: 0 0 15px#8D6D29;
+  }
+  div {
+    display: flex;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 40px;
+    border-radius: 20px;
+    color: white;
+    background: #8D6D29;
+    font-size: 14px;
+    line-height: 100%;
+    font-weight: 900;
+    text-decoration: none;
+  }
+  a:last-child {
+    margin-left: 30px;
+    color: #8D6D29;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  a:hover {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.coffee {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  height: 30vh;
+  width: 40vw;
+  &:hover {
+    opacity: 0.7;
+    padding: 0px;
+    transition: all 0.3s linear;
+  }
+  img {
+    height: 100%;
+  }
+}
+
